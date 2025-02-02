@@ -9,6 +9,18 @@
     <artifactId>selenium-java</artifactId>
     <version>4.27.0</version>
 </dependency>
-  </dependencies>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.10.2</version>
+    <scope>test</scope>
+</dependency>
+
+  </dependencies> <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+
+  
  
 </project>

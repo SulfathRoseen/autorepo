@@ -1,5 +1,7 @@
 package testscript;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -9,6 +11,7 @@ public void initialiseBrowser()
 {
 driver=new ChromeDriver();
 driver.get("https://selenium.qabible.in/simple-form-demo.php");
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));//implicit wait
 driver.manage();
 driver.manage().window().maximize();
 }
