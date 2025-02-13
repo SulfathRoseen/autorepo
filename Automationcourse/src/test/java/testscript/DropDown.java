@@ -54,7 +54,7 @@ public class DropDown extends Base {
 		// TODO Auto-generated method stub
 DropDown DropDown2=new DropDown();
 DropDown2.initialiseBrowser();
-
+DropDown2.verifydropDown();
 DropDown2.browserQuit();
 
 	}
