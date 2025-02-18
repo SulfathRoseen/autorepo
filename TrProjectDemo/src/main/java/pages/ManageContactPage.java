@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utilities.PageUtility;
 import utilities.RandomUtility;
-import utilities.WaitUtility;
+
+
 
 public class ManageContactPage {
 	public WebDriver driver;
@@ -27,55 +27,63 @@ public class ManageContactPage {
 	@FindBy(xpath="//input[@name=\"del_limit\"]") WebElement deliverylimitField;
 	@FindBy(xpath="//button[@name='Update']") WebElement updateOnbuttonField;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertMessageField;
-	
-public void navigate(String url	)
-{
-	driver.navigate().to(url);
-}
-public void clickOnEditButton()
-{
-	editButtonField.click();
-}
-public void enterPhoneNumberOnPhoneNumberField()
-{
-	RandomUtility randomUtility=new RandomUtility();
-	String number=randomUtility.fakerPhoneNumber();
-	phoneNumberField.sendKeys(number);
-}
-public void enterEmailAddressOnEmailAdressField()
-{
-	RandomUtility randomUtility=new RandomUtility();
-	String emailId=randomUtility.fakerEmail();
-	emailAddressField.sendKeys(emailId);
-}
-public void enterAddressOnAddressField()
-{
-	RandomUtility randomUtility=new RandomUtility();
-	String address=randomUtility.fakerAddress();
-	addressField.sendKeys(address);
-}
-public void enterTimeOnDeliveryTimeField()
-{
-	RandomUtility randomUtility=new RandomUtility();
-	int time=randomUtility.fakerTime();
-	deliveryTimeField.sendKeys(String.valueOf(time));
-}
-public void enterDeliveryLimitOnDeliveryLimitField()
-{
-	RandomUtility randomUtility=new RandomUtility();
-	int limit=randomUtility.fakerNumber();
-	deliverylimitField.sendKeys(String.valueOf(limit));
-	
-}
-public void clickTheUpdateButton()
-{
-	
-	updateOnbuttonField.click();
-	
-}	
-public boolean alertMessageAppears()
-{
-	boolean isAlertDisplayed=alertMessageField.isDisplayed();
-	return isAlertDisplayed;
-}
+
+	public ManageContactPage navigate(String url	)
+	{
+		driver.navigate().to(url);
+		return this;
+	}
+	public ManageContactPage clickOnEditButton()
+	{
+		editButtonField.click();
+		return this;
+	}
+	public ManageContactPage enterPhoneNumberOnPhoneNumberField()
+	{
+		RandomUtility randomUtility=new RandomUtility();
+		String number=randomUtility.fakerPhoneNumber();
+		phoneNumberField.sendKeys(number);
+		return this;
+	}
+	public ManageContactPage enterEmailAddressOnEmailAdressField()
+	{
+		RandomUtility randomUtility=new RandomUtility();
+		String emailId=randomUtility.fakerEmail();
+		emailAddressField.sendKeys(emailId);
+		return this;
+	}
+	public ManageContactPage enterAddressOnAddressField()
+	{
+		RandomUtility randomUtility=new RandomUtility();
+		String address=randomUtility.fakerAddress();
+		addressField.sendKeys(address);
+		return this;
+	}
+	public ManageContactPage enterTimeOnDeliveryTimeField()
+	{
+		RandomUtility randomUtility=new RandomUtility();
+		int time=randomUtility.fakerTime();
+		deliveryTimeField.sendKeys(String.valueOf(time));
+		return this;
+	}
+	public ManageContactPage enterDeliveryLimitOnDeliveryLimitField()
+	{
+		RandomUtility randomUtility=new RandomUtility();
+		int limit=randomUtility.fakerNumber();
+		deliverylimitField.sendKeys(String.valueOf(limit));
+		return this;
+
+	}
+	public ManageContactPage clickTheUpdateButton()
+	{
+
+		updateOnbuttonField.click();
+		return this;
+
+	}	
+	public boolean alertMessageAppears()
+	{
+		boolean isAlertDisplayed=alertMessageField.isDisplayed();
+		return isAlertDisplayed;
+	}
 }

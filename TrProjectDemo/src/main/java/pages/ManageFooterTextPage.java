@@ -25,35 +25,41 @@ public class ManageFooterTextPage {
 	@FindBy(xpath="//button[@name='Update']") WebElement updateButtonField;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertMessageField;
 
-	public void navigateToUrl(String url)
+	public ManageFooterTextPage navigateToUrl(String url)
 	{
 		driver.navigate().to(url);
+		return this;
 	}
-	public void clickOnEditButton()
+	public ManageFooterTextPage clickOnEditButton()
 	{
 		editField.click();
+		return this;
 	}
-	public void enterAddressOnAddressField()
+	public ManageFooterTextPage enterAddressOnAddressField()
 	{
 		RandomUtility randomUtility=new RandomUtility();
 		String address=randomUtility.fakerAddress();
 		addressField.sendKeys(address);
+		return this;
 	}
-	public void enterEmailOnEmailField()
+	public ManageFooterTextPage enterEmailOnEmailField()
 	{
 		RandomUtility randomUtility=new RandomUtility();
 		String email=randomUtility.fakerEmail();
 		emailField.sendKeys(email);
+		return this;
 	}
-	public void enterPhoneNumberOnPhoneNumberField()
+	public ManageFooterTextPage enterPhoneNumberOnPhoneNumberField()
 	{
 		RandomUtility randomUtility=new RandomUtility();
 		String number=randomUtility.fakerPhoneNumber();
 		phoneField.sendKeys(number);
+		return this;
 	}
-	public void clickOnUpdateButtonField()
+	public ManageFooterTextPage clickOnUpdateButtonField()
 	{
 		updateButtonField.click();
+		return this;
 	}
 	public boolean alertMessageAppears()
 	{

@@ -22,28 +22,38 @@ public class ManageNewsPage {
 	@FindBy(xpath="//textarea[@id='news']") WebElement newsField;
 	@FindBy(xpath="//button[@name='create']") WebElement saveButtonField;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertMessageField;
+	@FindBy(xpath="//button[@name='update']") WebElement updateButtonField;
 	
-	public void navigate(String url)
+	
+	public ManageNewsPage navigate(String url)
 	{
 		driver.navigate().to(url);
+		return this;
 	}
-	public void clickOnNewButton()
+	public ManageNewsPage clickOnNewButton()
 	{
 		newButtonField.click();
+		return this;
 	}
-	public void enterNewsOnNewsfield()
+	public ManageNewsPage enterNewsOnNewsfield(String news)
 	{
-		RandomUtility randomUtility=new RandomUtility();
-		String news=randomUtility.fakerNews();
-		newsField.sendKeys(news);
+		newsField.sendKeys("news");
+		return this;
 	}
-	public void clickOnSaveButton()
+	public ManageNewsPage clickOnSaveButton()
 	{
 		saveButtonField.click();
+		return this;
 	}
 	public boolean alertMessageAppears()
 	{
 		boolean isAlertDisplayed=alertMessageField.isDisplayed();
 		return isAlertDisplayed;
 	}
+	public ManageNewsPage clickOnUpdateButton()
+	{
+		updateButtonField.click();
+		return this;
+	}
+	
 }

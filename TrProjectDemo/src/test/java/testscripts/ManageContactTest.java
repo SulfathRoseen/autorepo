@@ -17,18 +17,9 @@ public class ManageContactTest extends Base {
 		String passWord = ExcelUtility.getString(1, 1, "manageContact");
 		String url=ExcelUtility.getString(1, 2, "manageContact");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userName);
-		loginpage.enterPasswordOnPasswordField(passWord);
-		loginpage.clickOnButton();
+		loginpage.enterUserNameOnUserNameField(userName).enterPasswordOnPasswordField(passWord).clickOnButton();
 		ManageContactPage manageContactPage=new ManageContactPage(driver);
-		manageContactPage.navigate(url);
-		manageContactPage.clickOnEditButton();
-		manageContactPage.enterPhoneNumberOnPhoneNumberField();
-		manageContactPage.enterEmailAddressOnEmailAdressField();
-		manageContactPage.enterAddressOnAddressField();
-		manageContactPage.enterTimeOnDeliveryTimeField();
-		manageContactPage.enterDeliveryLimitOnDeliveryLimitField();
-		manageContactPage.clickTheUpdateButton();
+		manageContactPage.navigate(url).clickOnEditButton().enterPhoneNumberOnPhoneNumberField().enterEmailAddressOnEmailAdressField().enterAddressOnAddressField().enterTimeOnDeliveryTimeField().enterDeliveryLimitOnDeliveryLimitField().clickTheUpdateButton();
 		boolean isupdated=manageContactPage.alertMessageAppears();
 		assertTrue(isupdated,"User cannot able to manage the contact");
 

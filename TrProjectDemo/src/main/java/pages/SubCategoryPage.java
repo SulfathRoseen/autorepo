@@ -26,33 +26,40 @@ public class SubCategoryPage {
 	@FindBy(xpath="//input[@id='main_img']") WebElement chooseFileField;
 	@FindBy(xpath="//button[text()='Save']") WebElement saveButtonField;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alertMessagePage;
+	@FindBy(xpath="(//a[@role='button'])[1]") WebElement deleteButtonField;
 
-	public void navigateToUrl(String Url)
+	public SubCategoryPage navigateToUrl(String Url)
 	{
 		driver.navigate().to(Url);
+		return this;
 	}
-	public void clickOnNewButton()
+	public SubCategoryPage clickOnNewButton()
 	{
 		newButtonField.click();
+		return this;
 
 	}
-	public void categoryOnDropDown()
+	public SubCategoryPage categoryOnDropDown()
 	{
 		PageUtility pageUtility=new PageUtility();
 		pageUtility.selectFromDropDownUsingValue(dropDownField, "IceCream");
+		return this;
 	}
-	public void enterSubCategoryOnSubCategoryField(String subCategory)
+	public SubCategoryPage enterSubCategoryOnSubCategoryField(String subCategory)
 	{
 		subCategoryField.sendKeys(subCategory);
+		return this;
 	}
-	public void fileUploadingOnSubCategoryField()
+	public SubCategoryPage fileUploadingOnSubCategoryField()
 	{
 		FileUploadUtility fileUploadUtility=new  FileUploadUtility	();
 		fileUploadUtility.fileUploadUsingSendKeys(chooseFileField, Constant.TESTFILEUPLOADFILE);
+		return this;
 	}
-	public void clickOnSaveButton()
+	public SubCategoryPage clickOnSaveButton()
 	{
 		saveButtonField.click();
+		return this;
 	}
 
 	public boolean alertMessageAppears() 
@@ -60,4 +67,16 @@ public class SubCategoryPage {
 		boolean isAlertDisplayed=alertMessagePage.isDisplayed();
 		return isAlertDisplayed;
 	}
+	public SubCategoryPage clickOnDeleteButton()
+	{
+		deleteButtonField.click();
+		return this;
+	}
+	public SubCategoryPage popUpMessage()
+	{
+		PageUtility pageUtility=new PageUtility();
+		pageUtility.alertPopup(driver);
+		return this;
+	}
+
 }

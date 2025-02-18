@@ -9,10 +9,10 @@
   
     <classes>
    
-      <class name="testscripts.ManageFooterTextTest">
+      <class name="testscripts.AdminUserTest">
       <methods>
       
-      <include name="verifyUserIsAbleToUpdateTheManageFooterText">
+      <include name="verifyUserIsAbleToAddNewAdminUser">
       </include>
       </methods>
       </class>

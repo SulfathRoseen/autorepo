@@ -30,16 +30,21 @@
 		</plugins>
 	</build>
 	<dependencies> <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.22</version>
+</dependency>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.27.0</version>
+			<version>4.18.1</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.10.2</version>
+			<version>7.8.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

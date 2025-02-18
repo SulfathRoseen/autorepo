@@ -20,19 +20,22 @@ public class LoginPage {
 	@FindBy(xpath="//p[text()='Admin Users']") WebElement dashboardAdminUser;
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']") WebElement alertMessageField;
 
-	public void enterUserNameOnUserNameField(String username)
+	public LoginPage enterUserNameOnUserNameField(String username)
 	{
 		userNameField.sendKeys(username);
+		return this;
 	}
 
-	public void enterPasswordOnPasswordField(String password)
+	public LoginPage enterPasswordOnPasswordField(String password)
 	{
 		passwordField.sendKeys(password);
+		return this;
 	}
 
-	public void clickOnButton() 
+	public LoginPage clickOnButton() 
 	{
 		buttonField.click();
+		return this;
 	}
 
 	public boolean dashBoardAppears()

@@ -17,15 +17,9 @@ public class ManageFooterTextTest extends Base{
 		String passWord=ExcelUtility.getString(1, 1, "manageFooterText");
 		String url=ExcelUtility.getString(1, 2, "manageFooterText");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(userName);
-		loginpage.enterPasswordOnPasswordField(passWord);
-		loginpage.clickOnButton();
+		loginpage.enterUserNameOnUserNameField(userName).enterPasswordOnPasswordField(passWord).clickOnButton();
 		ManageFooterTextPage manageFooterPage=new ManageFooterTextPage(driver);
-		manageFooterPage.clickOnEditButton();
-		manageFooterPage.enterAddressOnAddressField();
-		manageFooterPage.enterEmailOnEmailField();
-		manageFooterPage.enterPhoneNumberOnPhoneNumberField();
-		manageFooterPage.clickOnUpdateButtonField();
+		manageFooterPage.clickOnEditButton().enterAddressOnAddressField().enterEmailOnEmailField().enterPhoneNumberOnPhoneNumberField().clickOnUpdateButtonField();
 		boolean isupdated=manageFooterPage.alertMessageAppears();
 		assertTrue(isupdated,"User cannot able to manage the contact");
 	}
